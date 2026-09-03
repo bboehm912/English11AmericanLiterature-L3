@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>American Literature | Day 3: The Diné Emergence: Hajíínéí</title>
+  <style>
+:root {
+  --primary: #15803d;
+  --primary-dark: #166534;
+  --primary-light: #f0fdf4;
+  --bg-main: #f8fafc;
+  --card-bg: #ffffff;
+  --text-dark: #0f172a;
+  --text-muted: #475569;
+  --border: #cbd5e1;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-main);
+  margin: 0;
+  padding: 20px;
+  color: var(--text-dark);
+}
+
+.container { max-width: 980px; margin: 0 auto; }
+
+.header-card {
+  background: var(--card-bg);
+  padding: 20px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  border-top: 5px solid var(--primary);
+}
+
+.header-flex { display: flex; justify-content: space-between; align-items: center; }
+.header-left { display: flex; align-items: center; gap: 18px; }
+.logo-box { width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; }
+.logo-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+.stamp-container { width: 110px; height: 110px; position: relative; }
+.stamp-photo {
+  position: absolute;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 60px; height: 60px;
+  border-radius: 50%; object-fit: cover;
+  z-index: 1;
+}
+.stamp-svg {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.nav-tabs { display: flex; gap: 10px; margin-bottom: 20px; }
+.tab-btn {
+  flex: 1;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  font-weight: bold;
+  font-size: 0.95em;
+  cursor: pointer;
+  color: #334155;
+}
+.tab-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
+
+.card {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.bellringer-box {
+  background: var(--primary-light);
+  border-left: 4px solid var(--primary);
+  padding: 14px 18px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deck-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.std-badge {
+  background: #dcfce7;
+  color: var(--primary-dark);
+  font-size: 0.78em;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #bbf7d0;
+}
+
+.slide-stage {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  min-height: 440px;
+}
+
+.slide { display: none; }
+.slide.active { display: block; }
+
+.slide-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.slide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+
+.slide-visual-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.callout-box {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  background: #f0fdf4;
+  border-left: 4px solid var(--primary);
+}
+
+.deck-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+
+.ctrl-btn {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 10px 22px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.ctrl-btn:disabled { background: #94a3b8; }
+
+.resource-card {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e2e8f0;
+}
+label { font-weight: bold; margin-bottom: 6px; display: block; }
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.submit-btn {
+  width: 100%;
+  background: var(--primary);
+  color: white;
+  padding: 14px;
+  font-size: 1.05em;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.muted { color: var(--text-muted); }
+.italic { font-style: italic; }
+.subtitle { color: var(--text-muted); }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header-card">
+    <div class="header-flex">
+      <div class="header-left">
+        <div class="logo-box">
+          <img src="chisholm_logo.png" alt="Chisholm Logo" />
+        </div>
+        <div>
+          <h2>American Literature</h2>
+          <p class="subtitle">Unit 1: Indigenous Oral Traditions & Early American Voices — Day 3: The Diné Emergence: Hajíínéí</p>
+        </div>
+      </div>
+
+      <div class="stamp-container">
+        <img class="stamp-photo" src="boehm_photo.jpg" alt="Instructor Photo" />
+        <img class="stamp-svg" src="boehm-stamp.svg" alt="Classroom Stamp" />
+      </div>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="nav-tabs">
+    <button class="tab-btn active" onclick="switchTab('deck')">Deck</button>
+    <button class="tab-btn" onclick="switchTab('res')">Resource Hub</button>
+    <button class="tab-btn" onclick="switchTab('form')">Student Work Checkpoint</button>
+  </div>
+
+  <!-- TAB: DECK -->
+  <div id="deck-tab" class="card tab-content active">
+    <div class="bellringer-box">
+      <div>
+        <strong>Daily Bellringer Writing Prompt</strong>
+        <p id="bellringer-display" class="italic">Loading prompt...</p>
+      </div>
+      <button class="ctrl-btn" onclick="randomizeBellringer()">Shuffle</button>
+    </div>
+
+    <div class="deck-header">
+      <h3>Unit 1: Indigenous Oral Traditions & Early American Voices</h3>
+      <span id="slide-tracker" class="std-badge">Slide 1 of {{total_slides}}</span>
+    </div>
+
+    <div id="slide-stage" class="slide-stage">
+      <!-- Slides will be injected by script.js using JSON -->
+    </div>
+
+    <div class="deck-controls">
+      <button class="ctrl-btn" id="prev-btn" onclick="moveSlide(-1)" disabled>Previous</button>
+      <button class="ctrl-btn" id="next-btn" onclick="moveSlide(1)">Next</button>
+    </div>
+  </div>
+
+  <!-- TAB: RESOURCE HUB -->
+  <div id="res-tab" class="card tab-content">
+    <h3>Lesson Resource & Reference Hub</h3>
+    <p class="muted">Access official course references below.</p>
+    <div id="resource-list">
+      <!-- Resources injected by script.js -->
+    </div>
+  </div>
+
+  <!-- TAB: STUDENT WORK CHECKPOINT -->
+  <div id="form-tab" class="card tab-content">
+    <h3>Student Work Checkpoint & Reflection</h3>
+    <form id="checkpoint-form">
+      <!-- Dynamic form fields injected by script.js -->
+      <button type="submit" class="submit-btn">Submit Reflection</button>
+    </form>
+  </div>
+
+</div>
+
+<script>
+let currentSlide = 1;
+let totalSlides = 1;
+let bellringers = [];
+
+// Stock image pool for default visual slides
+const stockImagePool = [
+  'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=300&q=80', // Turtle / Nature
+  'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=300&q=80', // Water / Earth-Diver
+  'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=300&q=80', // Ecology / Forest
+  'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=300&q=80', // Campfire / Orality
+  'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=300&q=80', // Literature / History
+  'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=300&q=80'  // Writing Workshop
+];
+
+// Emoji fallback pool
+const iconPool = ['🐢', '🌊', '🌱', '🗣️', '☯️', '📝'];
+
+function renderSlides(slides) {
+  const stage = document.getElementById('slide-stage');
+  stage.innerHTML = '';
+
+  slides.forEach((slide, index) => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'slide' + (index === 0 ? ' active' : '');
+    wrapper.id = `slide-${index + 1}`;
+
+    // Priority 1: slide.image OR Stock Web Image
+    const imageUrl = slide.image || stockImagePool[index % stockImagePool.length];
+    // Fallback: slide.icon OR Emoji Pool
+    const fallbackEmoji = slide.icon || iconPool[index % iconPool.length];
+
+    const visualMediaHTML = `
+      <img src="${imageUrl}" 
+           alt="${slide.title}" 
+           style="width:110px;height:110px;object-fit:cover;border-radius:50%;border:3px solid var(--primary);" 
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+      <span style="font-size: 2.8em; display: none; margin-bottom: 8px;">${fallbackEmoji}</span>
+    `;
+
+    wrapper.innerHTML = `
+      <div class="slide-header">
+        <h3 class="slide-title">${slide.title}</h3>
+        <span class="std-badge">${slide.standard || ''}</span>
+      </div>
+      <div class="slide-grid">
+        <div class="slide-body">
+          <ul>
+            ${(slide.bullets || []).map(b => `<li>${b}</li>`).join('')}
+          </ul>
+          ${slide.callout ? `<div class="callout-box"><strong style="color: var(--primary-dark);">Key Takeaway:</strong> ${slide.callout}</div>` : ''}
+        </div>
+        <div class="slide-visual-card">
+          ${visualMediaHTML}
+          ${slide.visual_caption ? `<small style="color: var(--text-muted); display: block; font-size: 0.82em; margin-top: 6px;">${slide.visual_caption}</small>` : ''}
+        </div>
+      </div>
+    `;
+    stage.appendChild(wrapper);
+  });
+}
+function initLesson(data) {
+  bellringers = data.bellringers || [];
+  totalSlides = (data.slides || []).length || 1;
+
+  document.getElementById('slide-tracker').innerText = `Slide 1 of ${totalSlides}`;
+
+  renderSlides(data.slides || []);
+  renderResources(data.resources || []);
+  renderForm(data.form || []);
+
+  randomizeBellringer();
+}
+
+function randomizeBellringer() {
+  if (!bellringers.length) return;
+  const idx = Math.floor(Math.random() * bellringers.length);
+  document.getElementById('bellringer-display').innerText = bellringers[idx];
+}
+
+function moveSlide(dir) {
+  const newSlide = currentSlide + dir;
+  if (newSlide < 1 || newSlide > totalSlides) return;
+
+  document.getElementById(`slide-${currentSlide}`).classList.remove('active');
+  currentSlide = newSlide;
+  document.getElementById(`slide-${currentSlide}`).classList.add('active');
+
+  document.getElementById('slide-tracker').innerText = `Slide ${currentSlide} of ${totalSlides}`;
+  document.getElementById('prev-btn').disabled = currentSlide === 1;
+  document.getElementById('next-btn').disabled = currentSlide === totalSlides;
+}
+
+function renderResources(resources) {
+  const container = document.getElementById('resource-list');
+  container.innerHTML = '';
+
+  resources.forEach(res => {
+    const card = document.createElement('div');
+    card.className = 'resource-card';
+    card.innerHTML = `
+      <div>
+        <strong>${res.title}</strong><br/>
+        <small>${res.description || ''}</small>
+      </div>
+      <a href="${res.file}" class="ctrl-btn">Open Resource</a>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function renderForm(fields) {
+  const form = document.getElementById('checkpoint-form');
+  const submitBtn = form.querySelector('.submit-btn');
+  form.innerHTML = '';
+
+  fields.forEach(field => {
+    const group = document.createElement('div');
+    group.className = 'form-group';
+    const id = `field_${field.label.replace(/\s+/g, '_').toLowerCase()}`;
+
+    let inputHTML = '';
+    if (field.type === 'short_text') {
+      inputHTML = `<input type="text" id="${id}" ${field.required ? 'required' : ''} />`;
+    } else if (field.type === 'date') {
+      inputHTML = `<input type="date" id="${id}" ${field.required ? 'required' : ''} />`;
+    } else if (field.type === 'rating_scale') {
+      inputHTML = `<select id="${id}">${(field.options || []).map(o => `<option>${o}</option>`).join('')}</select>`;
+    } else if (field.type === 'quote_citation') {
+      inputHTML = `<textarea id="${id}" rows="3" ${field.required ? 'required' : ''}></textarea>`;
+    } else if (field.type === 'select_rubric') {
+      inputHTML = `<select id="${id}"><option>-- Select Rubric Benchmark Level --</option>${(field.options || []).map(o => `<option>${o}</option>`).join('')}</select>`;
+    } else if (field.type === 'checkbox_group' || field.type === 'multi_select') {
+      inputHTML = (field.options || []).map(o => `<label><input type="checkbox" name="${id}" value="${o}" /> ${o}</label>`).join('<br/>');
+    }
+
+    group.innerHTML = `<label for="${id}">${field.label}</label>${inputHTML}`;
+    form.appendChild(group);
+  });
+
+  if (submitBtn) form.appendChild(submitBtn);
+}
+
+function switchTab(key) {
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+
+  if (key === 'deck') {
+    document.querySelectorAll('.tab-btn')[0].classList.add('active');
+    document.getElementById('deck-tab').classList.add('active');
+  } else if (key === 'res') {
+    document.querySelectorAll('.tab-btn')[1].classList.add('active');
+    document.getElementById('res-tab').classList.add('active');
+  } else if (key === 'form') {
+    document.querySelectorAll('.tab-btn')[2].classList.add('active');
+    document.getElementById('form-tab').classList.add('active');
+  }
+}
+window.addEventListener('DOMContentLoaded', () => initLesson({"course_title": "American Literature", "unit_title": "Unit 1: Indigenous Oral Traditions & Early American Voices", "day_title": "Day 3: The Diné Emergence: Hajíínéí", "bellringers": ["What does it mean for a creation story to feature an 'ascent' through distinct worlds rather than creation out of nothing? How might an ascent motif shape a culture's view of human growth?", "Reflect on the word 'harmony' or 'balance.' What happens in a narrative—and in a society—when social or environmental balance is broken?", "Define the Diné concept of Hózhó in your own words based on your preparation reading. Why is cosmic balance central to the Hajíínéí narrative?", "Critical Lens: How does analyzing Indigenous origin narratives as complex philosophical and structural texts challenge traditional, Eurocentric definitions of 'literature'?"], "slides": [{"title": "1. Lesson Overview & The Concept of Ascent", "standard": "MN 11.1.6.1 & MN 11.1.3.1", "bullets": ["Primary Focus: Investigating the structural elements of progression, cosmic harmony, and ascent in traditional lore.", "Core Objective: Critically review the sequential phases present in the Diné (Navajo) account of human beginnings.", "The Emergence Archetype: Unlike ex nihilo narratives (creation from nothing), Emergence stories detail movement upward through successive worlds.", "Cultural Context: Hajíínéí ('The Emergence') grounds Diné identity, geography, ethics, and human responsibility in an interconnected cosmos."], "callout": "Key Concept: The Emergence story is not merely a history of physical origin, but an ongoing structural journey toward cosmic order, maturity, and wisdom.", "icon": "🌅", "visual_caption": "Structural Framework of the Diné Ascent Narrative"}, {"title": "2. Subterranean Origins & Sequential Phases", "standard": "MN 11.1.6.1 & MN 11.1.3.1", "bullets": ["The Black World (Ni' Hodiłhił): A foundational realm of spiritual prototypes and dark mist where initial consciousness awakens.", "The Blue & Yellow Worlds: Intermediate stages marked by expanding populations, social trials, and physical developments.", "The Catalyst for Movement: Transitions between worlds are consistently triggered by chaos, conflict, or moral imbalance (Doo ák'a'ii).", "Structural Progression: Each physical move upward represents a necessary step toward higher collective understanding and refined social order."], "callout": "Narrative Engine: Ascent is earned—movement to a higher world occurs only after beings recognize disharmony and seek resolution.", "icon": "🌑", "visual_caption": "Sequential Progression Through Subterranean Realms"}, {"title": "3. Cosmic Harmony & The Philosophy of Hózhó", "standard": "MN 11.1.6.1 & MN 11.1.3.1", "bullets": ["Defining Hózhó: A foundational Diné philosophy encompassing beauty, balance, health, environmental order, and proper relationships.", "The Separation of Sexes: A key trial in the narrative exploring social interdependence, mutual respect, and the dangers of extreme division.", "Disruption & Consequences: Actions that violate natural law (such as Coyote's interference) result in natural disasters, like the Great Flood.", "Restoring Order: Narrative progression depends on establishing rituals, laws, and agreements that realign beings with Hózhó."], "callout": "Philosophical Anchor: In Diné lore, balance is not a static state—it is an active, ongoing practice of maintaining alignment with the world.", "icon": "🌾", "visual_caption": "Hózhó: Interconnected Balance & Cosmic Alignment"}, {"title": "4. The Fifth World & Sacred Geography", "standard": "MN 11.1.6.1 & MN 11.1.3.1", "bullets": ["Arrival in the Glittering World (Ni' Hodísnos): Emerging through the sacred reed onto the earth's surface of sunlight, seasons, and mortality.", "Establishing Boundaries: The Holy People (Diyin Dine'é) place the Four Sacred Mountains (Dził) to demarcate Diné Bikéyah (the Diné homeland).", "Cosmic Organization: Placing the stars, establishing day and night, and formalizing the social and ceremonial structures of human life.", "Literary Function of Setting: Landscape in Hajíínéí is not a passive backdrop; it is a living, sacred moral map."], "callout": "Geographic Connection: The sacred mountains serve as physical and spiritual pillars anchoring the Diné people to cosmic balance.", "icon": "🏔️", "visual_caption": "The Four Sacred Mountains & Sacred Boundaries"}, {"title": "5. Literary Elements & Structural Motifs", "standard": "MN 11.1.6.1 & MN 11.1.3.1", "bullets": ["Sacred Numerology: The structural repetition of the number four (four directions, four colors, four mountains, four prior worlds).", "The Trickster Archetype: Coyote operates as a crucial structural catalyst—disrupting rigid order to force necessary growth and adaptability.", "Directional Progression: Specific movements associated with East (Dawn), South (Blue Sky), West (Twilight), and North (Darkness).", "Oral Framing: Repetitive structures and formulaic phrasing designed to preserve deep cosmic histories across generations."], "callout": "Analytical Focus: Notice how oral narrative structures embed complex cultural values directly into plot patterns.", "icon": "🧭", "visual_caption": "Directional & Structural Motifs in Traditional Lore"}, {"title": "6. Analytical Mapping Workshop", "standard": "MN 11.1.6.1 & MN 11.1.3.1", "bullets": ["Step 1: Open your Hajíínéí Structural Analysis Matrix.", "Step 2: Chart the causes, catalysts, and resolutions for each world transition in the emergence narrative.", "Step 3: Identify two specific instances where Hózhó was disrupted and analyze the actions taken to restore equilibrium.", "Step 4: Draft a comparative thesis statement evaluating how the 'Ascent Model' of creation shapes cultural views of human responsibility differently than an 'Earth-Diver' or 'Ex Nihilo' model."], "callout": "Workshop Objective: Connect structural progression in narrative lore to overarching thematic arguments about cosmic balance.", "icon": "📝", "visual_caption": "Evidence Mapping & Comparative Analysis Workflow"}], "form": [{"label": "Student Name", "type": "short_text", "required": true}, {"label": "Date", "type": "date", "required": true}, {"label": "Textual Analysis Prompt: Select one transitional phase between worlds in the Hajíínéí narrative. Quote or cite specific events from the text to explain how a social or moral disharmony acted as the catalyst for physical ascent into the next world.", "type": "quote_citation", "required": true}, {"label": "Self-Assessment: Understanding Emergence Structures & Hózhó", "type": "rating_scale", "options": ["1 - Needs Support (Struggling to identify the sequential phases of the narrative or the concept of ascent)", "2 - Developing (Can identify basic stages of the narrative, but struggling to analyze Hózhó as a structural element)", "3 - Competent (Successfully maps world transitions, disharmony catalysts, and sacred motifs using text evidence)", "4 - Expert (Provides deep analytical insight into how structural ascent reflects core cultural values and cosmic balance)"], "required": true}, {"label": "Student Completion Pledge", "type": "checkbox_group", "options": ["I confirm I completed the structural analysis matrix and submitted my text-based reflection."], "required": true}]}));
+</script>
+<script>
+  // JSON data placeholder injected by build.py
+  const LESSON_DATA = {{lesson_json}};
+  initLesson(LESSON_DATA);
+</script>
+</body>
+</html>
