@@ -356,7 +356,7 @@ function initLesson(data) {
   document.getElementById('slide-tracker').innerText = `Slide 1 of ${totalSlides}`;
 
   renderSlides(data.slides || []);
-  renderResources(data.resources || []);
+  // renderResources(data.resources || []); // Disabled so hardcoded HTML remains
   renderForm(data.form || []);
 
   randomizeBellringer();
